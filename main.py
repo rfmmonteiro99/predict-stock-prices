@@ -23,8 +23,6 @@ end = dt.datetime(2021, 1, 1)
 
 data = web.DataReader(company, 'yahoo', start, end) # 'yahoo' is used to retrieve daily stock prices from Yahoo Finance
 
-print(data)
-
 # Prepare Data
 scaler = MinMaxScaler() # Default feature_range is (0,1)
 scaled_data = scaler.fit_transform(data['Close'].values.reshape(-1, 1))
